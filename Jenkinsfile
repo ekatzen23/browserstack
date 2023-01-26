@@ -3,7 +3,11 @@ pipeline {
   stages {
     stage('version') {
       steps {
-        sh 'python3 --version'
+        sh 'git clone -b sdk https://github.com/browserstack/python-selenium-browserstack'
+        sh 'cd python-selenium-browserstack'
+        sh 'python3 -m venv env'
+        sh 'source env/bin/activate'
+        sh 'pip3 install -r requirements.txt'
       }
     }
     stage('hello') {
