@@ -11,8 +11,8 @@ pipeline {
                 sh 'browserstack-sdk python3 ./tests/test.py'
                 sh './BrowserStackLocal --key $LwBRs3y8eNzM1RGY7gZK --daemon stop' 
             }
+            browserStackReportPublisher 'automate'
          }
-      browserStackReportPublisher 'automate'
       }
   }
 }
