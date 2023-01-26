@@ -8,7 +8,7 @@ pipeline {
     }
     stage('hello') {
       steps {
-        browserstack-sdk python ./tests/test.py
+        python3 hello.py
       }
     }
   }
